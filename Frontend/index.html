@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>FitTrack Pro – Performance Lab</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script defer src="script.js"></script>
+</head>
+
+<body class="dark">
+
+<!-- AUTH PAGE -->
+<div id="authPage" class="auth-container">
+  <h2>FitTrack Pro</h2>
+
+  <input id="username" placeholder="Username">
+  <input id="password" type="password" placeholder="Password">
+
+  <button onclick="signup()">Sign Up</button>
+  <button onclick="login()">Login</button>
+
+  <p id="authMsg"></p>
+</div>
+
+<!-- MAIN APP (YOUR ORIGINAL SITE) -->
+<div id="app" style="display:none;">
+
+<div class="top-logo-wrapper">
+    <img src="vitap.png" alt="VIT-AP Logo" class="top-logo">
+</div>
+
+<nav>
+  <h1>FitTrack Pro</h1>
+  <div>
+    <button onclick="goTo(0)">Home</button>
+    <button onclick="goTo(1)">Health Lab</button>
+    <button onclick="goTo(2)">Diet Engine</button>
+    <button onclick="goTo(3)">Workout Matrix</button>
+    <button onclick="goTo(4)">Progress Lab</button>
+    <button onclick="logout()">Logout</button>
+  </div>
+</nav>
+
+<div id="slider" class="slider">
+
+<!-- HOME -->
+<section class="page home">
+  <h2>Integrated Performance Lab</h2>
+  <p>Analyze. Strategize. Execute.</p>
+  <div class="grid">
+    <div class="card">🔥 Weekly Goal: 4 Sessions</div>
+    <div class="card">⚡ Recovery Focus Enabled</div>
+    <div class="card">💧 Hydration Target: 3L/day</div>
+  </div>
+</section>
+
+<!-- HEALTH -->
+<section class="page">
+  <h2>Metabolic & Compositional Foundations</h2>
+
+  <input id="height" placeholder="Height (cm)">
+  <input id="weight" placeholder="Weight (kg)">
+  <input id="age" placeholder="Age">
+
+  <select id="gender">
+    <option value="male">Male</option>
+    <option value="female">Female</option>
+  </select>
+
+  <select id="activity">
+    <option value="1.2">Sedentary</option>
+    <option value="1.4">Light Active</option>
+    <option value="1.6">Moderate Active</option>
+    <option value="1.8">Highly Active</option>
+  </select>
+
+  <button onclick="calculateHealth()">Run Analysis</button>
+  <div id="healthOutput" class="grid"></div>
+</section>
+
+<!-- DIET -->
+<section class="page">
+  <h2>Nutritional Strategy & Analysis</h2>
+
+  <select id="goal">
+    <option value="loss">Fat Loss Protocol</option>
+    <option value="maintain">Maintenance / Recomp</option>
+    <option value="bulk">Lean Bulk Protocol</option>
+  </select>
+
+  <button onclick="generateDiet()">Generate Strategy</button>
+  <div id="dietOutput" class="grid"></div>
+</section>
+
+<!-- WORKOUT -->
+<section class="page">
+  <h2>Protocol Matrix</h2>
+
+  <select id="workoutType">
+    <option>Strength</option>
+    <option>HIIT</option>
+    <option>Weight Loss</option>
+  </select>
+
+  <select id="level">
+    <option>Beginner</option>
+    <option>Intermediate</option>
+    <option>Advanced</option>
+  </select>
+
+  <button onclick="generateWorkout()">Activate Protocol</button>
+  <div id="workoutOutput" class="grid"></div>
+</section>
+
+<!-- PROGRESS -->
+<section class="page">
+  <h2>Progress Intelligence Hub</h2>
+
+  <input id="progressWeight" placeholder="Current Weight">
+  <input id="workoutTime" placeholder="Workout Time (mins)">
+  <button onclick="logProgress()">Log Session</button>
+
+  <canvas id="progressChart"></canvas>
+  <div id="progressOutput" class="grid"></div>
+</section>
+
+</div>
+
+<footer>
+    Built by <strong>Mukesh Medasani</strong> • VIT-AP • 
+    <span class="footer-title">FitTrack Pro</span> • 2026
+</footer>
+
+</div> <!-- END APP -->
+
+</body>
+</html>
