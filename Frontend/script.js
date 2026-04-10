@@ -1,4 +1,4 @@
-const API = "http://localhost:3000"; // CHANGE AFTER DEPLOY
+const API = "https://fit-track-cmix.onrender.com"; // CHANGE AFTER DEPLOY
 
 let slider;
 let chart;
